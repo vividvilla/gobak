@@ -1,0 +1,31 @@
+{
+    // Enable/Disable logging
+    "log": true,
+    // Global backup path
+    "backup_path": "/home/db/backups",
+    // Backup file format. 
+    // Eg: if you backup file name is like `backup-2016-10-10.psql.gz`
+    // backup file format is `backup-%s.psql.gz` and
+    // backup date format is 'YYYY-MM-DD'
+    // backup date format is based on excel date formats - https://goo.gl/oCTDIs
+    "backup_file_format": "backup-%s.psql.gz",
+    "backup_file_date_format": "YYYY-MM-DD",
+
+    // Define your backup slots here in array
+    "backup_slots": [
+        {
+            // slot name
+            "name": "weekly",
+            // slot relative path. Lets say if your absolute path is `/home/db/backups/weekly`
+            // then slot path name is `weekly` 
+            "path": "weekly",
+            // Number of backup files to keep. If bacup file count exceeds this count then its deleted.
+            "count": 4
+        },
+        {
+            "name": "daily",
+            "path": "daily",
+            "count": 7
+        }
+    ]
+}
