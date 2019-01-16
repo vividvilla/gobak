@@ -13,3 +13,5 @@ type BackupSlot struct {
 	Path  string `json:"path"`
 	Count int    `json:"count"`
 }
+
+type TestStruct struct{}
